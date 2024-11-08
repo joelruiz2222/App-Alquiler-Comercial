@@ -1,8 +1,20 @@
 package ar.com.terciario.n6030.model.entity;
 
-public class Propietario {
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Propietario implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     int id;
+    
+    @Basic
     String dni;
     String nombre;
     String apellido;
@@ -68,9 +80,5 @@ public class Propietario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
-    
-    
     
 }

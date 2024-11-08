@@ -1,10 +1,29 @@
 package ar.com.terciario.n6030.model.entity;
 
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Novedades {
        
+    @Id
+    @GeneratedValue (strategy = GenerationType.SEQUENCE)
      int id;
+    
+    @OneToOne
+    @JoinColumn(name = "id_usuario")        
     Usuario usuario;
+    
+    @OneToOne
+    @JoinColumn(name = "id_alquiler")
     Alquiler alqui;
+    
+    @Basic
     String texto;
     String estado;
 
