@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -17,74 +18,62 @@
         <title>Dueño</title>
 
         <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
+
+            body{
+                background: #f5f5f5
             }
-            .form-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .rounded{
+                border-radius: 1rem
             }
-            .form-group {
-                margin-bottom: 15px;
+            .nav-pills .nav-link{
+                color: #555
             }
-            .button-group {
-                display: flex;
-                gap: 10px; /* Separación entre botones */
+            .nav-pills .nav-link.active{
+                color: white
             }
+            input[type="radio"]{
+                margin-right: 5px
+            }
+            .bold{
+                font-weight:bold
+            }
+
+            $(function() {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+            
         </style>
 
     </head>
 
     <body>
-        <div class="form-container">
-            <form action="AltaUsuario" method="post">
-                <div class="section text-center">
-                    <h3>Ceo De App :)</h3>
-                    <h5>Crear Usuario</h5>
 
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Tu Email">
-                    </div>
-                    <div class="form-group">
-                        <i class="input-icon fas fa-regular fa-user"></i>
-                        <input type="text" name="usu" placeholder="Tu Usuario">
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-solid fa-lock"></i>
-                        <input type="password" name="contraseña" placeholder="Tu Contraseña">
-                    </div>
-                    <div class="form-group">
-                        <select id="estado" name="estado" required>  
-                            <option value="" disabled selected>Selecciona un estado</option> 
-                            <option value=true>Activo (1)</option> 
-                            <option value=false>Inactivo (0)</option> 
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select id="tipoCargo" name="perfi" required> 
-                            <option value="" disabled selected>Selecciona un Perfil</option> 
-                            <option value="propietario">Propietario</option> 
-                            <option value="administrador">Administrador</option> 
-                        </select>
-                    </div>
-                    <div class="button-group">
-                        
-                        <button type="submit" class="btn btn-dark">Confirmar</button>
-
-                    </div>
+        <div class="container py-5">
+            <!-- For demo purpose -->
+            <div class="row mb-4">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-6">Vision General Del Sistema</h1>
                 </div>
-            </form>
-        </div>
+            </div> <!-- End -->
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card ">
+                        <div class="card-header">
+                            <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
 
-        <script src="js/jquery-3.7.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/fontawesome.js"></script>
+                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                    <li class="nav-item"><a  href="usuario.jsp" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Usuarios </a> </li> 
+                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Locales </a> </li>
+                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Pagos </a> </li>
+                                    <li class="nav-item"> <a href="" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Novedades </a> </li>
+                                </ul>
+                            
+
+            <script src="js/jquery-3.7.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/fontawesome.js"></script>
+
     </body>
 
 </html>
