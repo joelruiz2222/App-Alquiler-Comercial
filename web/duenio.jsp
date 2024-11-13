@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    
+
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -38,10 +38,7 @@
                 font-weight:bold
             }
 
-            $(function() {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-            
+
         </style>
 
     </head>
@@ -49,12 +46,12 @@
     <body>
 
         <div class="container py-5">
-            <!-- For demo purpose -->
+
             <div class="row mb-4">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-6">Vision General Del Sistema</h1>
+                    <h1 class="">Vision General Del Sistema</h1>
                 </div>
-            </div> <!-- End -->
+            </div> 
             <div class="row">
                 <div class="col-lg-6 mx-auto">
                     <div class="card ">
@@ -62,17 +59,24 @@
                             <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
 
                                 <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                                    <li class="nav-item"><a  href="usuario.jsp" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Usuarios </a> </li> 
-                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Locales </a> </li>
-                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Pagos </a> </li>
-                                    <li class="nav-item"> <a href="" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Novedades </a> </li>
-                                </ul>
-                            
 
-            <script src="js/jquery-3.7.1.min.js"></script>
-            <script src="js/popper.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/fontawesome.js"></script>
+                                    <li class="nav-item"><a  href="usuario.jsp" class="nav-link active "> <i class=""></i> Usuarios </a> </li> 
+                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class=""></i> Locales </a> </li>
+                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class=" "></i> Pagos </a> </li>
+                                    <li class="nav-item"> <a href="" class="nav-link "> <i class=""></i> Novedades </a> </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/fontawesome.js"></script>
 
     </body>
 

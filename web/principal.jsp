@@ -61,7 +61,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.jsp">Inicio de Sesión</a> <!-- Login button -->
+                        <a class="nav-link" href="login.jsp">Inicio de Sesión</a> 
                     </li>
                 </ul>
             </div>
@@ -85,14 +85,16 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/IMAGEN.webp" class="d-block w-100" alt="...">
+                <img src="images/si.png" class="d-block w-100" alt="...">
+                <img src="images/LOGO2.png" class="carousel-logo" alt="Logo">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>ENCUENTRA TU COMERCIO IDEAL</h2>
                     <p>Alquileres de comercios</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/IMAGEN.webp" class="d-block w-100" alt="...">
+                <img src="images/co.png" class="d-block w-100" alt="...">
+                <img src="images/LOGO2.png" class="carousel-logo" alt="Logo">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>ENCUENTRA TU COMERCIO IDEAL</h2>
                     <p>Alquileres de comercios</p>
@@ -118,7 +120,7 @@
                 <div class="card-body">
                     <h5 class="card-title">DEPARTAMENTO COMPLEJO ARENALES</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="Alquilar.html" class="btn btn-primary">Reservaa Ahora</a>
+                    <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
                 </div>
             </div>
         </div>
@@ -128,7 +130,7 @@
                 <div class="card-body">
                     <h5 class="card-title">DEPARTAMENTE J.A.P</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="Alquilar.html" class="btn btn-primary">Reserva Ahora</a>
+                    <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
                 </div>
             </div>
         </div>
@@ -138,7 +140,7 @@
                 <div class="card-body">
                     <h5 class="card-title">DEPARTAMENTO LK</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="Alquilar.html" class="btn btn-primary">Reserva Ahora</a>
+                    <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
                 </div>
             </div>
         </div>
@@ -148,7 +150,7 @@
                 <div class="card-body">
                     <h5 class="card-title">LOTE PABLITO ALBAÑIL</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="Alquilar.html" class="btn btn-primary">Reserva Ahora</a>
+                    <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
                 </div>
             </div>
         </div>
@@ -158,7 +160,7 @@
                 <div class="card-body">
                     <h5 class="card-title">LOTE BARRIO A LA PAR DE RUIZ</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="Alquilar.html" class="btn btn-primary">Reserva Ahora</a>
+                    <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
                 </div>
             </div>
         </div>
@@ -168,7 +170,7 @@
                 <div class="card-body">
                     <h5 class="card-title">TERRENO BARRIO (puede que tenga ratas)</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="Alquilar.html" class="btn btn-primary">Comprar</a>
+                    <a href="login.jsp" class="btn btn-primary">Reserva  Ahorar</a>
                 </div>
             </div>
         </div>
