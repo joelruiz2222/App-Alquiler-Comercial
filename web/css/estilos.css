@@ -1,0 +1,41 @@
+body{
+
+background: white;
+color: red;
+border: 5px solid rgb(0, 0, 0); }
+
+.container{
+
+border: 5px solid blue;
+
+}
+
+.row{
+
+border: 2px solid blue;
+
+}
+
+.container-fluid{
+
+border: 2px solid green;
+
+}
+
+.col-2{
+
+border: 3px solid rgb(2, 201, 236);
+
+}
+
+.col-7{
+
+    border: 3px solid rgb(190, 18, 47);
+    
+    }
+
+    .col-5{
+
+        border: 3px solid rgb(167, 221, 7);
+        
+        }
