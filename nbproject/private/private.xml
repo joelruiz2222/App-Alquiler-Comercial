@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/web/principal.jsp</file>
             <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/web/login.jsp</file>
+=======
+            <file>file:/C:/Users/Joel/Documents/NetBeansProjects/AlquilerComercial/web/duenio.jsp</file>
+            <file>file:/C:/Users/Joel/Documents/NetBeansProjects/AlquilerComercial/web/login.jsp</file>
+            <file>file:/C:/Users/Joel/Documents/NetBeansProjects/AlquilerComercial/web/principal.jsp</file>
+>>>>>>> c0156bd6c098f7f739b99ddedb28c7f7e66a45d2
         </group>
     </open-files>
 </project-private>
