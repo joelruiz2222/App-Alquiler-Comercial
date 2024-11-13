@@ -4,7 +4,7 @@
  */
 package ar.com.terciario.n6030.model.repository;
 
-import ar.com.terciario.n6030.model.entity.Propietario;
+import ar.com.terciario.n6030.model.entity.Local;
 import ar.com.terciario.n6030.model.repository.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +12,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -20,28 +19,23 @@ import javax.persistence.criteria.Root;
  *
  * @author Joel
  */
-public class PropietarioJpaController implements Serializable {
+public class LocalJpaController implements Serializable {
 
-    public PropietarioJpaController(EntityManagerFactory emf) {
+    public LocalJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
-    public PropietarioJpaController() {
-        emf = Persistence.createEntityManagerFactory("AlquilerComercialPU");
-    }
-    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public void create(Propietario propietario) {
+    public void create(Local local) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(propietario);
+            em.persist(local);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -50,19 +44,19 @@ public class PropietarioJpaController implements Serializable {
         }
     }
 
-    public void edit(Propietario propietario) throws NonexistentEntityException, Exception {
+    public void edit(Local local) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            propietario = em.merge(propietario);
+            local = em.merge(local);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = propietario.getId();
-                if (findPropietario(id) == null) {
-                    throw new NonexistentEntityException("The propietario with id " + id + " no longer exists.");
+                int id = local.getId();
+                if (findLocal(id) == null) {
+                    throw new NonexistentEntityException("The local with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -78,14 +72,14 @@ public class PropietarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Propietario propietario;
+            Local local;
             try {
-                propietario = em.getReference(Propietario.class, id);
-                propietario.getId();
+                local = em.getReference(Local.class, id);
+                local.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The propietario with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The local with id " + id + " no longer exists.", enfe);
             }
-            em.remove(propietario);
+            em.remove(local);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -94,19 +88,19 @@ public class PropietarioJpaController implements Serializable {
         }
     }
 
-    public List<Propietario> findPropietarioEntities() {
-        return findPropietarioEntities(true, -1, -1);
+    public List<Local> findLocalEntities() {
+        return findLocalEntities(true, -1, -1);
     }
 
-    public List<Propietario> findPropietarioEntities(int maxResults, int firstResult) {
-        return findPropietarioEntities(false, maxResults, firstResult);
+    public List<Local> findLocalEntities(int maxResults, int firstResult) {
+        return findLocalEntities(false, maxResults, firstResult);
     }
 
-    private List<Propietario> findPropietarioEntities(boolean all, int maxResults, int firstResult) {
+    private List<Local> findLocalEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Propietario.class));
+            cq.select(cq.from(Local.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -118,20 +112,20 @@ public class PropietarioJpaController implements Serializable {
         }
     }
 
-    public Propietario findPropietario(int id) {
+    public Local findLocal(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Propietario.class, id);
+            return em.find(Local.class, id);
         } finally {
             em.close();
         }
     }
 
-    public int getPropietarioCount() {
+    public int getLocalCount() {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Propietario> rt = cq.from(Propietario.class);
+            Root<Local> rt = cq.from(Local.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

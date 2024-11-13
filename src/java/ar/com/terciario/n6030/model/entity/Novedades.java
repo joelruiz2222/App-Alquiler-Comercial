@@ -1,5 +1,6 @@
 package ar.com.terciario.n6030.model.entity;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Novedades {
+public class Novedades implements Serializable {
        
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)

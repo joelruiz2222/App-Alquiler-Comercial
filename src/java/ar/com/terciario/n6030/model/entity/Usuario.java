@@ -1,8 +1,20 @@
 package ar.com.terciario.n6030.model.entity;
 
-public class Usuario {
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Usuario implements Serializable {
     
-     int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    int id;
+    
+    @Basic
     String usuario;
     String password;
     boolean activo;
@@ -67,6 +79,10 @@ public class Usuario {
 
     public void setPerfil(String perfil) {
         this.perfil = perfil;
+    }
+
+    public void CrearUsuario(String Email, String Usuario, String Password, boolean BActivo, String Perfil) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     

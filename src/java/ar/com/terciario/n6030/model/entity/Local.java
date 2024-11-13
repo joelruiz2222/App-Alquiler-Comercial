@@ -1,8 +1,20 @@
 package ar.com.terciario.n6030.model.entity;
 
-public class Local {
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Local implements Serializable {
     
-     int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    int id;
+    
+    @Basic
     int superficie;
     boolean habilitado;
     int costo_mes;
