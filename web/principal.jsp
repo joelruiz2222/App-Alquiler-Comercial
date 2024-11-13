@@ -61,7 +61,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Inicio de Sesión</a> <!-- Login button -->
+                        <a class="nav-link" href="login.jsp">Inicio de Sesión</a> <!-- Login button -->
                     </li>
                 </ul>
             </div>
