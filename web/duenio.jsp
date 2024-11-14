@@ -22,18 +22,14 @@
             body{
                 background: #f5f5f5
             }
-            .rounded{
-                border-radius: 1rem
-            }
+            
             .nav-pills .nav-link{
                 color: #555
             }
             .nav-pills .nav-link.active{
                 color: white
             }
-            input[type="radio"]{
-                margin-right: 5px
-            }
+           
             .bold{
                 font-weight:bold
             }
@@ -60,10 +56,12 @@
 
                                 <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
 
-                                    <li class="nav-item"><a  href="usuario.jsp" class="nav-link active "> <i class=""></i> Usuarios </a> </li> 
-                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class=""></i> Locales </a> </li>
-                                    <li class="nav-item"> <a  href="" class="nav-link "> <i class=" "></i> Pagos </a> </li>
-                                    <li class="nav-item"> <a href="" class="nav-link "> <i class=""></i> Novedades </a> </li>
+                                    <li class="nav-item text-center">
+                     
+                                    <li class="nav-item text-center"><a  href="usuario.jsp" class="nav-link btr "> <i class=""></i> Usuarios </a> </li> 
+                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Locales </a> </li>
+                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Pagos </a> </li>
+                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Novedades </a> </li>
 
                                 </ul>
                             </div>

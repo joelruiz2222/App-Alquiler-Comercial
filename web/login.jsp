@@ -102,8 +102,8 @@
                 <form action="" method="post">
                     <h2 class="sr-only">Login Form</h2>
                     <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                    <div class="form-group"><input class="form-control" type="text" name="user" placeholder="Username"></div>
-                    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                    <div class="form-group"><input class="form-control" type="text" name="usu" placeholder="Username"></div>
+                    <div class="form-group"><input class="form-control" type="password" name="contra" placeholder="Password"></div>
                     <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Iniciar Session</button></div>
                 </form>
             </div>
