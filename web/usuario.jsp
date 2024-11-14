@@ -18,27 +18,23 @@
 
     <body>
 
-            <form action="AltaUsuario" method="post">
-                <div class="form-group"> 
-                    <label for="username">Email</label> 
-                    <input type="text" id="username" name="username" placeholder="Ingrese un Email/Ej:hola22@gmail.com" required class="form-control"> 
+        <form action="AltaUsuario" method="post">
+            <div class="form-group"> 
+                <label for="username">Email</label> 
+                <input type="text" id="username" name="email" placeholder="Ingrese un Email/Ej:hola22@gmail.com" required class="form-control"> 
+            </div> 
+            <div class="form-group"> 
+                <label for="usuario">Usuario</label> 
+                <div class="input-group"> 
+                    <input type="text" id="usuario" name="usu" placeholder="Nombre de Usuario" class="form-control" required> 
                 </div> 
-                <div class="form-group"> 
-                    <label for="usuario">Usuario</label> 
-                    <div class="input-group"> 
-                        <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario" class="form-control" required> 
-                    </div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="contraseña">Contraseña</label> 
+                <div class="input-group"> 
+                    <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" required> 
                 </div> 
-                <div class="form-group"> 
-                    <label for="password">Contraseña</label> 
-                    <div class="input-group"> 
-                        <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" required> 
-                    </div> 
-                </div> 
-                <button type="submit" class="btn btn-primary">Enviar</button> 
-
-                
-            </form>
+            </div> 
 
             <div class="form-group">
                 <select id="estado" name="estado" required>  
@@ -56,12 +52,9 @@
                 </select>
             </div>
 
-            <div class="row">
+            <button type="submit" class=""> Confirmar</button>
 
-                <div class="card-footer"> <button type="button" class=""> Confirmar</button>
-                </div>
-            </div> 
-
+        </form>
 
             <div id="paypal" class="tab-pane fade pt-3">
                 <h6 class="pb-2">Select your paypal account type</h6>

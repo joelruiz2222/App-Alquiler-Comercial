@@ -50,26 +50,27 @@ public class AltaUsuario extends HttpServlet {
         
         String Perfil = request.getParameter("perfi");
         
-        usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
+        //usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
 
-        response.sendRedirect("duenio.jsp");
+        //response.sendRedirect("duenio.jsp");
         
-        /*
         int encontrado = 0;
         
         List<Usuario> ListaUsu = usu.ListaUsuComple();
         
-        for (Usuario usu : ListaUsu) {
+        for (Usuario usua : ListaUsu) {
             
-            if (usu.getUsuario().equalsIgnoreCase(Usuario)) {
+            if (usua.getUsuario().equalsIgnoreCase(Usuario)) {
                 
                 encontrado = 1;
                 
                 break;
                 
             }
-            
-            if (encontrado==1) {
+
+        }
+
+          if (encontrado==1) {
                 
                 response.getWriter().write("Usuario Ya Existente!!");
                 
@@ -80,9 +81,7 @@ public class AltaUsuario extends HttpServlet {
                 response.sendRedirect("duenio.jsp");
 
             }
-
-        }*/
-
+        
     }
 
     @Override
