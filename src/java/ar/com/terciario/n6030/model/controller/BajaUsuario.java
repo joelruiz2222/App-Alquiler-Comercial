@@ -36,7 +36,7 @@ public class BajaUsuario extends HttpServlet {
         
     }
 
-    /
+    
     @Override
     public String getServletInfo() {
         return "Short description";
