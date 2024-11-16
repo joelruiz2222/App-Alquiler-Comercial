@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -17,36 +18,30 @@
         <title>Dueño</title>
 
         <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
+
+            body{
+                background: #f5f5f5
             }
-            .form-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            
+            .nav-pills .nav-link{
+                color: #555
             }
-            .form-group {
-                margin-bottom: 15px;
+            .nav-pills .nav-link.active{
+                color: white
             }
-            .button-group {
-                display: flex;
-                gap: 10px; /* Separación entre botones */
+           
+            .bold{
+                font-weight:bold
             }
+
+
         </style>
 
     </head>
 
     <body>
-        <div class="form-container">
-            <form action="AltaUsuario" method="post">
-                <div class="section text-center">
-                    <h3>Ceo De App :)</h3>
-                    <h5>Crear Usuario</h5>
 
+<<<<<<< HEAD
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Tu Email">
                     </div>
@@ -75,16 +70,43 @@
                     <div class="button-group">
 
                         <button type="submit" class="btn btn-dark">Confirmar</button>
+=======
+        <div class="container py-5">
+>>>>>>> df93679beb9910668ab6502a6228494b3a94407f
 
+            <div class="row mb-4">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="">Vision General Del Sistema</h1>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card ">
+                        <div class="card-header">
+                            <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+
+                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+
+                                    <li class="nav-item text-center">
+                     
+                                    <li class="nav-item text-center"><a  href="usuario.jsp" class="nav-link btr "> <i class=""></i> Usuarios </a> </li> 
+                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Locales </a> </li>
+                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Pagos </a> </li>
+                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Novedades </a> </li>
+
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
 
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/fontawesome.js"></script>
+
     </body>
 
 </html>
