@@ -11,6 +11,8 @@ public interface IUsuario {
     
      void CrearUsuario(String Email, String Usuario, String Contraseña, boolean Activo, String Perfil);
     
+     void EliminarUsuario(int id);
+     
      List <Usuario> ListaUsuComple();
      
 }
