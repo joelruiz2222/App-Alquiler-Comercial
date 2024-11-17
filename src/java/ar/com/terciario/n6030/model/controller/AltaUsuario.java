@@ -1,7 +1,10 @@
 package ar.com.terciario.n6030.model.controller;
 
 import ar.com.terciario.n6030.model.entity.Usuario;
+<<<<<<< HEAD
 import ar.com.terciario.n6030.model.service.impl.loginImple;
+=======
+>>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
 import ar.com.terciario.n6030.model.service.impl.usuarioImple;
 import java.io.IOException;
 import java.util.List;
@@ -17,8 +20,11 @@ public class AltaUsuario extends HttpServlet {
 
     usuarioImple usu = new usuarioImple();
     
+<<<<<<< HEAD
     loginImple log = new loginImple();
     
+=======
+>>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -47,14 +53,24 @@ public class AltaUsuario extends HttpServlet {
         String Usuario = request.getParameter("usu");
         String Password = request.getParameter("contraseña");
         
+<<<<<<< HEAD
         String pass = log.encriptado(Password);
         
+=======
+>>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
         String SActivo = request.getParameter("estado");
         
         boolean BActivo = Boolean.parseBoolean(SActivo);
         
         String Perfil = request.getParameter("perfi");
         
+<<<<<<< HEAD
+=======
+        //usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
+
+        //response.sendRedirect("duenio.jsp");
+        
+>>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
         int encontrado = 0;
         
         List<Usuario> ListaUsu = usu.ListaUsuComple();
@@ -77,7 +93,11 @@ public class AltaUsuario extends HttpServlet {
                 
             } else {
 
+<<<<<<< HEAD
                 usu.CrearUsuario(Email, Usuario, pass, BActivo, Perfil);
+=======
+                usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
+>>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
 
                 response.sendRedirect("duenio.jsp");
 
