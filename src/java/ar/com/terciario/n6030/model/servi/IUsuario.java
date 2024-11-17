@@ -15,9 +15,4 @@ public interface IUsuario {
      
      List <Usuario> ListaUsuComple();
      
-<<<<<<< HEAD
-   
-     
-=======
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
 }

@@ -1,10 +1,7 @@
 package ar.com.terciario.n6030.model.controller;
 
 import ar.com.terciario.n6030.model.entity.Usuario;
-<<<<<<< HEAD
 import ar.com.terciario.n6030.model.service.impl.loginImple;
-=======
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
 import ar.com.terciario.n6030.model.service.impl.usuarioImple;
 import java.io.IOException;
 import java.util.List;
@@ -19,12 +16,9 @@ import javax.servlet.http.HttpSession;
 public class AltaUsuario extends HttpServlet {
 
     usuarioImple usu = new usuarioImple();
-    
-<<<<<<< HEAD
+
     loginImple log = new loginImple();
-    
-=======
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -33,76 +27,61 @@ public class AltaUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-         List<Usuario> ListaUsu = usu.ListaUsuComple();
-         
-         HttpSession session = request.getSession();
-         
-         session.setAttribute("alu", ListaUsu);
-         
-         response.sendRedirect("duenio.jsp");
-        
-    }
 
+        List<Usuario> ListaUsu = usu.ListaUsuComple();
+
+        HttpSession session = request.getSession();
+
+        session.setAttribute("alu", ListaUsu);
+
+        response.sendRedirect("duenio.jsp");
+
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
+
         String Email = request.getParameter("email");
         String Usuario = request.getParameter("usu");
         String Password = request.getParameter("contraseña");
-        
-<<<<<<< HEAD
-        String pass = log.encriptado(Password);
-        
-=======
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
-        String SActivo = request.getParameter("estado");
-        
-        boolean BActivo = Boolean.parseBoolean(SActivo);
-        
-        String Perfil = request.getParameter("perfi");
-        
-<<<<<<< HEAD
-=======
-        //usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
 
-        //response.sendRedirect("duenio.jsp");
-        
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
+        String pass = log.encriptado(Password);
+
+        String SActivo = request.getParameter("estado");
+
+        boolean BActivo = Boolean.parseBoolean(SActivo);
+
+        String Perfil = request.getParameter("perfi");
+
         int encontrado = 0;
-        
+
         List<Usuario> ListaUsu = usu.ListaUsuComple();
-        
+
         for (Usuario usua : ListaUsu) {
-            
+
             if (usua.getUsuario().equalsIgnoreCase(Usuario)) {
-                
+
                 encontrado = 1;
-                
+
                 break;
-                
+
             }
 
         }
 
-          if (encontrado==1) {
-                
-                response.getWriter().write("Usuario Ya Existente!!");
-                
-            } else {
+        if (encontrado == 1) {
 
-<<<<<<< HEAD
-                usu.CrearUsuario(Email, Usuario, pass, BActivo, Perfil);
-=======
-                usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
+            response.getWriter().write("Usuario Ya Existente!!");
 
-                response.sendRedirect("duenio.jsp");
+        } else {
 
-            }
-        
+            usu.CrearUsuario(Email, Usuario, pass, BActivo, Perfil);
+
+            response.sendRedirect("duenio.jsp");
+
+        }
+
     }
 
     @Override

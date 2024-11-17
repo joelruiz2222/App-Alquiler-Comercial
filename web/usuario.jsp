@@ -23,11 +23,7 @@
                 border:none;
                 border-style: outset;
                 border-color: gray;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
             }
 
 
@@ -117,11 +113,7 @@
                     <li class="nav-item text-center">
                         <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#crearUsuario" role="tab" aria-controls="pills-profile" aria-selected="false">Crear</a>
                     </li>
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
                     <li class="nav-item text-center">
                         <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#eliminarUsuario" role="tab" aria-controls="pills-profile" aria-selected="false">Eliminar</a>
                     </li>
@@ -141,7 +133,6 @@
 
                     <div class="tab-pane fade" id="crearUsuario" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-<<<<<<< HEAD
                         <div class="form px-4">
 
                             <form action="AltaUsuario" method="post">
@@ -174,7 +165,7 @@
                                     </div>
 
                                     <div>
-                                            <select name="perfi" required> 
+                                        <select name="perfi" required> 
                                             <option value="" disabled selected>Selecciona un Perfil</option> 
                                             <option value="propietario">Propietario</option> 
                                             <option value="administrador">Administrador</option> 
@@ -182,51 +173,6 @@
                                     </div>
 
                                     <button type="submit" class="btn btn-dark btn-block">Confirmar</button>
-=======
-
-                        <div class="form px-4">
-
-                            <form action="" >
-
-                                <div>
-
-                                    <form id="crearUsuario" action="AltaUsuario" method="post">
-                                        <div class="form-group"> 
-
-                                            <input class="form-control" type="email" name="email" placeholder="Ingrese un Email/Ej:hola22@gmail.com"> 
-                                        </div> 
-                                        <div class="form-group"> 
-
-                                            <div class="input-group"> 
-                                                <input class="form-control" type="text" name="usu" placeholder="Nombre de Usuario"> 
-                                            </div> 
-                                        </div> 
-                                        <div class="form-group"> 
-
-                                            <div class="input-group"> 
-                                                <input class="form-control" type="password" name="contraseña" placeholder="Contraseña"> 
-                                            </div> 
-                                        </div> 
-
-                                        <div class="form-group">
-                                            <select id="estado" name="estado" required>  
-                                                <option value="" disabled selected>Selecciona un estado</option> 
-                                                <option value="true">Activo (1)</option> 
-                                                <option value="false">Inactivo (0)</option> 
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <select id="tipoCargo" name="perfi" required> 
-                                                <option value="" disabled selected>Selecciona un Perfil</option> 
-                                                <option value="propietario">Propietario</option> 
-                                                <option value="administrador">Administrador</option> 
-                                            </select>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-dark btn-block">Confirmar</button>
-                                    </form>                                    
->>>>>>> cfbb55c34f2ba5215e5f902181f9ea7c0a218070
 
                                 </div>
 
