@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Bootstrap CSS -->
+      
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <title>JSP Page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
                 text-align: center;
             }
 
-            /* Navbar styling */
+            
             .navbar-custom {
                 background-color: #333;
             }
@@ -39,16 +39,16 @@
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 10;
-                height: 200px; /* Adjust height as needed */
+                height: 200px; 
             }
         </style>
     </head>
     <body>
-        <!-- Navbar -->
+     
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
             <div class="container">
                 <a class="navbar-brand mx-auto" href="#">
-                    <img src="images/LOGO.png" alt="Logo"> <!-- Logo image -->
+                    <img src="images/LOGO.png" alt="Logo"> 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,8 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            
+                            <a class="nav-link" href="hpago.jsp">Historial de pagos</a>
+                             
                         </li>
                     </ul>
                 </div>
@@ -115,22 +116,21 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="ownerForm">
+                            <form id="ownerForm" action="Historialpagos" method="post">
                                 <div class="mb-3">
-                                    <label for="ownerLastName" class="form-label">Numero de Tarjeta</label>
-                                    <input type="text" class="form-control" id="ownerLastName" required>
+                                    <label for="ownerLastName" class="form-label">Monto</label>
+                                    <input type="text" class="form-control" id="ownerTarjeta" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="ownerFirstName" class="form-label">Codigo de Seguridad</label>
-                                    <input type="text" class="form-control" id="ownerFirstName" required>
+                                    <label for="ownerFirstName" class="form-label">Fecha pago</label>
+                                    <input type="date" class="form-control" id="ownercodigo" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="ownerEmail" class="form-label">MM/AA</label>
-                                    <input type="email" class="form-control" id="ownerEmail" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="ownerPhone" class="form-label">Monto</label>
-                                    <input type="text" class="form-control" id="ownerPhone" required>
+                                    <label for="newsStatus" class="form-label">Tipo pago</label>
+                                    <select class="form-control" id="newsStatus" required>
+                                        <option value="pendiente">Pagar Mes</option>
+                                        <option value="procesado">Adelanto</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Pagar</button>
                             </form>

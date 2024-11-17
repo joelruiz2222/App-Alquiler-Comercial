@@ -15,40 +15,22 @@
 </head>
 <body>
   <div class="container mt-5">
-    
+     <a class="nav-link" href="propietarios.jsp">Volver al inicio</a>
     <h1 class="text-center">Historial de Pagos</h1>
-    <p class="text-center">Consulta de todos los pagos realizados</p>
+    <p class="text-center">Consulta todos tus pagos realizados</p>
 
    
     <table class="table table-striped mt-4">
       <thead class="table-dark">
         <tr>
           <th>ID Pago</th>
-          <th>Fecha</th>
           <th>Monto</th>
           <th>Estado</th>
         </tr>
       </thead>
       <tbody>
        
-        <tr>
-          <td>1</td>
-          <td>01/10/2024</td>
-          <td>$15,000</td>
-          <td>Completado</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>01/11/2024</td>
-          <td>$15,000</td>
-          <td>Pendiente</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>01/12/2024</td>
-          <td>$15,000</td>
-          <td>Completado</td>
-        </tr>
+        
       </tbody>
     </table>
   </div>
