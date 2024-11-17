@@ -136,11 +136,10 @@
 
                         <div class="form px-4">
 
-                            <form action="" >
+                            <form action="AltaUsuario" method="post">
 
                                 <div>
 
-                                    <form id="crearUsuario" action="AltaUsuario" method="post">
                                         <div class="form-group"> 
 
                                             <input class="form-control" type="email" name="email" placeholder="Ingrese un Email/Ej:hola22@gmail.com"> 
@@ -175,7 +174,6 @@
                                         </div>
 
                                         <button type="submit" class="btn btn-dark btn-block">Confirmar</button>
-                                    </form>                                    
 
                                 </div>
 

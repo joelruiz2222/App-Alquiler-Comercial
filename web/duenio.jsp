@@ -41,39 +41,6 @@
 
     <body>
 
-<<<<<<< HEAD
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Tu Email">
-                    </div>
-                    <div class="form-group">
-                        <i class="input-icon fas fa-regular fa-user"></i>
-                        <input type="text" name="usu" placeholder="Tu Usuario">
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-solid fa-lock"></i>
-                        <input type="password" name="contraseña" placeholder="Tu Contraseña">
-                    </div>
-                    <div class="form-group">
-                        <select id="estado" name="estado" required>  
-                            <option value="" disabled selected>Selecciona un estado</option> 
-                            <option value=true>Activo (1)</option> 
-                            <option value=false>Inactivo (0)</option> 
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select id="tipoCargo" name="perfi" required> 
-                            <option value="" disabled selected>Selecciona un Perfil</option> 
-                            <option value="propietario">Propietario</option> 
-                            <option value="administrador">Administrador</option> 
-                        </select>
-                    </div>
-                    <div class="button-group">
-
-                        <button type="submit" class="btn btn-dark">Confirmar</button>
-=======
-        <div class="container py-5">
->>>>>>> df93679beb9910668ab6502a6228494b3a94407f
-
             <div class="row mb-4">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="">Vision General Del Sistema</h1>
