@@ -34,7 +34,7 @@ public class AltaUsuario extends HttpServlet {
 
         session.setAttribute("alu", ListaUsu);
 
-        response.sendRedirect("duenio.jsp");
+        response.sendRedirect("Lista.jsp");
 
     }
 
@@ -49,8 +49,6 @@ public class AltaUsuario extends HttpServlet {
         String pass = log.encriptado(Password);
 
         String SActivo = request.getParameter("estado");
-
-        boolean BActivo = Boolean.parseBoolean(SActivo);
 
         String Perfil = request.getParameter("perfi");
 
@@ -76,7 +74,7 @@ public class AltaUsuario extends HttpServlet {
 
         } else {
 
-            usu.CrearUsuario(Email, Usuario, pass, BActivo, Perfil);
+            usu.CrearUsuario(Email, Usuario, pass, SActivo, Perfil);
 
             response.sendRedirect("duenio.jsp");
 

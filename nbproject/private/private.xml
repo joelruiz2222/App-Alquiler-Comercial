@@ -11,6 +11,12 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/src/java/ar/com/terciario/n6030/model/entity/Novedades.java</file>
+            <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/src/java/ar/com/terciario/n6030/model/controller/NovedadesServlet.java</file>
+            <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/web/administradores.jsp</file>
+            <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/AgussLK/Documents/NetBeansProjects/App-Alquiler-Comercial/src/java/ar/com/terciario/n6030/model/repository/NovedadesJpaController.java</file>
+        </group>
     </open-files>
 </project-private>
