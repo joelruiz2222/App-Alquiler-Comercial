@@ -17,8 +17,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
-
+        
+        <title>login</title>
+        
         <style>
+        
         .login-dark {
             height:1000px;
             background:#0d0c55 url(../../assets/img/star-sky.jpg);
@@ -91,19 +94,22 @@
             transform:translateY(1px);
         }
     </style>
-        
-    </head>
-    
-    <html>
+</head>
 
         <body>
             <div class="login-dark">
-                <form method="post">
-                    <h2 class="sr-only">Login Form</h2>
+
+                <h2 class="sr-only">Login Form</h2>
+                
+                <form action="Login" method="post">
+                    
                     <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-                    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+                    <div class="form-group"><input class="form-control" type="text" name="usu" placeholder="user"></div>
+                    <div class="form-group"><input class="form-control" type="password" name="contra" placeholder="Password"></div>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Iniciar Sesion</button></div>
+                    
+                    </form>
+          </div>
 
             <script src="js/jquery-3.7.1.min.js"></script>
             <script src="js/popper.min.js"></script>

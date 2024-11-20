@@ -1,6 +1,7 @@
 package ar.com.terciario.n6030.model.controller;
 
 import ar.com.terciario.n6030.model.entity.Usuario;
+import ar.com.terciario.n6030.model.service.impl.loginImple;
 import ar.com.terciario.n6030.model.service.impl.usuarioImple;
 import java.io.IOException;
 import java.util.List;
@@ -15,6 +16,9 @@ import javax.servlet.http.HttpSession;
 public class AltaUsuario extends HttpServlet {
 
     usuarioImple usu = new usuarioImple();
+    
+
+    loginImple log = new loginImple();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -44,15 +48,13 @@ public class AltaUsuario extends HttpServlet {
         String Usuario = request.getParameter("usu");
         String Password = request.getParameter("contraseña");
         
+        String pass = log.encriptado(Password);
+
         String SActivo = request.getParameter("estado");
         
         boolean BActivo = Boolean.parseBoolean(SActivo);
         
         String Perfil = request.getParameter("perfi");
-        
-        //usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
-
-        //response.sendRedirect("duenio.jsp");
         
         int encontrado = 0;
         
@@ -76,7 +78,7 @@ public class AltaUsuario extends HttpServlet {
                 
             } else {
 
-                usu.CrearUsuario(Email, Usuario, Password, BActivo, Perfil);
+                usu.CrearUsuario(Email, Usuario, pass, BActivo, Perfil);
 
                 response.sendRedirect("duenio.jsp");
 
