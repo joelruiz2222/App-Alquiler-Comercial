@@ -17,14 +17,14 @@ public class Usuario implements Serializable {
     @Basic
     String usuario;
     String password;
-    boolean activo;
+    String activo;
     String email;
     String perfil;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String usuario, String password, boolean activo, String email, String perfil) {
+    public Usuario(int id, String usuario, String password, String activo, String email, String perfil) {
         this.id = id;
         this.usuario = usuario;
         this.password = password;
@@ -57,11 +57,11 @@ public class Usuario implements Serializable {
         this.password = password;
     }
 
-    public boolean isActivo() {
+    public String getActivo() {
         return activo;
     }
 
-    public void setActivo(boolean activo) {
+    public void setActivo(String activo) {
         this.activo = activo;
     }
 
@@ -80,12 +80,5 @@ public class Usuario implements Serializable {
     public void setPerfil(String perfil) {
         this.perfil = perfil;
     }
-
-    public void CrearUsuario(String Email, String Usuario, String Password, boolean BActivo, String Perfil) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-    
     
 }

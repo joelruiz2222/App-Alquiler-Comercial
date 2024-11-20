@@ -16,7 +16,6 @@ import javax.servlet.http.HttpSession;
 public class AltaUsuario extends HttpServlet {
 
     usuarioImple usu = new usuarioImple();
-    
 
     loginImple log = new loginImple();
     
@@ -28,22 +27,21 @@ public class AltaUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-         List<Usuario> ListaUsu = usu.ListaUsuComple();
-         
-         HttpSession session = request.getSession();
-         
-         session.setAttribute("alu", ListaUsu);
-         
-         response.sendRedirect("duenio.jsp");
-        
-    }
 
+        List<Usuario> ListaUsu = usu.ListaUsuComple();
+
+        HttpSession session = request.getSession();
+
+        session.setAttribute("alu", ListaUsu);
+
+        response.sendRedirect("Lista.jsp");
+
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
+
         String Email = request.getParameter("email");
         String Usuario = request.getParameter("usu");
         String Password = request.getParameter("contraseña");
@@ -57,33 +55,33 @@ public class AltaUsuario extends HttpServlet {
         String Perfil = request.getParameter("perfi");
         
         int encontrado = 0;
-        
+
         List<Usuario> ListaUsu = usu.ListaUsuComple();
-        
+
         for (Usuario usua : ListaUsu) {
-            
+
             if (usua.getUsuario().equalsIgnoreCase(Usuario)) {
-                
+
                 encontrado = 1;
-                
+
                 break;
-                
+
             }
 
         }
 
-          if (encontrado==1) {
-                
-                response.getWriter().write("Usuario Ya Existente!!");
-                
-            } else {
+        if (encontrado == 1) {
 
-                usu.CrearUsuario(Email, Usuario, pass, BActivo, Perfil);
+            response.getWriter().write("Usuario Ya Existente!!");
 
-                response.sendRedirect("duenio.jsp");
+        } else {
 
-            }
-        
+            usu.CrearUsuario(Email, Usuario, pass, SActivo, Perfil);
+
+            response.sendRedirect("duenio.jsp");
+
+        }
+
     }
 
     @Override

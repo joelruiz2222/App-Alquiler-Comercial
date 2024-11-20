@@ -9,7 +9,7 @@ public interface IUsuario {
     
     UsuarioJpaController usu = new UsuarioJpaController();
     
-     void CrearUsuario(String Email, String Usuario, String Contraseña, boolean Activo, String Perfil);
+     void CrearUsuario(String Email, String Usuario, String Contraseña, String Activo, String Perfil);
     
      void EliminarUsuario(int id);
      

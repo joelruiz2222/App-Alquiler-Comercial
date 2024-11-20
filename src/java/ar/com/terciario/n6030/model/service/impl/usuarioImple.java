@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class usuarioImple implements IUsuario{
 
     @Override
-    public void CrearUsuario(String Email, String Usuario, String Contraseña, boolean Activo, String Perfil) {
+    public void CrearUsuario(String Email, String Usuario, String Contraseña, String Activo, String Perfil) {
         
         Usuario u = new Usuario();
         
@@ -43,7 +43,6 @@ public class usuarioImple implements IUsuario{
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(usuarioImple.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         
     }
 

@@ -2,4 +2,7 @@
 <Context path="/AlquilerComercial">
   <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="tyyyy" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/dbcomercial?zeroDateTimeBehavior=CONVERT_TO_NULL" username="root"/>
 </Context>
+<<<<<<< HEAD
 
+=======
+>>>>>>> bcdfe4ed352a584982b64b2f0130a2882a861d70
