@@ -39,12 +39,12 @@
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 10;
-                height: 200px; 
+                height: 200px;
             }
         </style>
     </head>
     <body>
-     
+
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
             <div class="container">
                 <a class="navbar-brand mx-auto" href="#">
@@ -56,8 +56,12 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="hpago.jsp">Historial de pagos</a>
-                             
+                            <form action="Historialpagos" method="get">
+
+                                <button type="submit" class="btn btn-primary">Historial De Pagos</button>
+                                
+                            </form>
+
                         </li>
                     </ul>
                 </div>
@@ -118,22 +122,23 @@
                         <div class="modal-body">
                             <form id="ownerForm" action="Historialpagos" method="post">
                                 <div class="mb-3">
-                                    <label for="ownerLastName" class="form-label">Monto</label>
-                                    <input type="text" class="form-control" id="ownerTarjeta" required>
+                                    <label for="ownerTarjeta" class="form-label">Monto</label>
+                                    <input type="text" class="form-control" name="monto" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="ownerFirstName" class="form-label">Fecha pago</label>
-                                    <input type="date" class="form-control" id="ownercodigo" required>
+                                    <label for="ownercodigo" class="form-label">Fecha pago</label>
+                                    <input type="date" class="form-control" name="fecha" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="newsStatus" class="form-label">Tipo pago</label>
-                                    <select class="form-control" id="newsStatus" required>
-                                        <option value="pendiente">Pagar Mes</option>
-                                        <option value="procesado">Adelanto</option>
+                                    <select class="form-control" name="tipo_pago" required>
+                                        <option value="Pago Mensual">Pagar Mes</option>
+                                        <option value="Adelanto">Adelanto</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Pagar</button>
                             </form>
+
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,6 @@
 
     <body>
 
-
             <div class="row mb-4">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="">Vision General Del Sistema</h1>

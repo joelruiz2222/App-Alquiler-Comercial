@@ -7,6 +7,8 @@
     <class>ar.com.terciario.n6030.model.entity.Local</class>
     <class>ar.com.terciario.n6030.model.entity.Novedades</class>
     <class>ar.com.terciario.n6030.model.entity.Usuario</class>
+    <class>ar.com.terciario.n6030.model.entity.Pagos</class>
+    <class>ar.com.terciario.n6030.model.entity.Pago</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbcomercial?serverTimezone=UTC"/>
