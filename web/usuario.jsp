@@ -100,6 +100,7 @@
                     <li class="nav-item text-center">
                         <a class="nav-link btr btn-custom" id="pills-profile-tab" data-toggle="pill" href="#crearUsuario" role="tab" aria-controls="pills-profile" aria-selected="false">Crear</a>
                     </li>
+
                     <li class="nav-item text-center">
                         <form action="AltaUsuario" method="get">
                             
@@ -110,6 +111,7 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade" id="crearUsuario" role="tabpanel" aria-labelledby="pills-profile-tab">
+
                         <div class="form px-4">
                             
                             <form action="AltaUsuario" method="post">
@@ -142,6 +144,7 @@
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-dark btn-block">Confirmar</button>
+
                                 </div>
                             </form>
                         </div>

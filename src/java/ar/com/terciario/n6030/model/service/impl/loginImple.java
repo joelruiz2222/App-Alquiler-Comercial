@@ -24,22 +24,21 @@ public class loginImple implements ILogin{
 
     @Override
     public Usuario BusquedaUs(String usuario) {
-        
-        List <Usuario> u = usu.findUsuarioEntities();
-        
+
+        List<Usuario> u = usu.findUsuarioEntities();
+
         for (Usuario usuario1 : u) {
-            
+
             if (usuario1.getUsuario().equalsIgnoreCase(usuario)) {
-                
+
                 return usuario1;
-                
+
             }
-            
-            
+
         }
-        
+
         return null;
-        
+
     }
-    
+
 }

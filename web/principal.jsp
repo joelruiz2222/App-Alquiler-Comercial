@@ -56,7 +56,6 @@
     </head>
     <body>
 
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
             <div class="container">

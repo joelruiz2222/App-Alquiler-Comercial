@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
@@ -37,6 +36,8 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //EL USUARIO SI LO ENCUENTRA LA CONTRASEÑA NO LA ESTARIA VALIDANDO BIEN O COMPARANDO DIGAMOS!!
+        
         //PROCESO DE LOGIN EN EL DO POST
         String usuario = request.getParameter("usu");
 
@@ -44,18 +45,49 @@ public class Login extends HttpServlet {
 
         Usuario u = log.BusquedaUs(usuario);
 
-        if (u != null && log.PassDesec(contraseña, u.getPassword())) {
+        if (u != null ) {
 
             HttpSession session = request.getSession(true);
 
-            session.setAttribute("usuarioo", u.getEmail());
+            session.setAttribute("usuario", u);
 
-            response.sendRedirect("propietarios.jsp");
+            String Perfil = u.getPerfil();
 
-        } else {
+            if ("TPIComercial".equals(u.getUsuario()) /*&& "almairy".equals(u.getPassword())*/) {
 
-            response.getWriter().write("NO EXISTE EL USUARIO");
+                response.sendRedirect("duenio.jsp");
 
+            } else {
+
+                if ("propietario".equals(Perfil)) {
+
+                    response.sendRedirect("propietarios.jsp");
+
+                } else {
+
+                    if ("administrador".equals(Perfil)) {
+
+                        response.sendRedirect("administradores.jsp");
+
+                    } else {
+
+                        if (u.getUsuario().equalsIgnoreCase(usuario) && !u.getPassword().equalsIgnoreCase(contraseña)) {
+
+                            response.getWriter().write("CONTRASEÑA INCORRECTA");
+
+                        } else {
+
+                            response.getWriter().write("NO EXISTE EL USUARIO");
+
+                        }
+
+                    }
+                }
+            }
+        }else{
+        
+         response.getWriter().write("ta todo mal wacho");
+        
         }
 
     }

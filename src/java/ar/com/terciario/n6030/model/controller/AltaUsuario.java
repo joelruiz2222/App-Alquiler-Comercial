@@ -18,7 +18,7 @@ public class AltaUsuario extends HttpServlet {
     usuarioImple usu = new usuarioImple();
 
     loginImple log = new loginImple();
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -45,13 +45,15 @@ public class AltaUsuario extends HttpServlet {
         String Email = request.getParameter("email");
         String Usuario = request.getParameter("usu");
         String Password = request.getParameter("contraseña");
-
+        
         String pass = log.encriptado(Password);
 
         String SActivo = request.getParameter("estado");
-
+        
+        boolean BActivo = Boolean.parseBoolean(SActivo);
+        
         String Perfil = request.getParameter("perfi");
-
+        
         int encontrado = 0;
 
         List<Usuario> ListaUsu = usu.ListaUsuComple();
