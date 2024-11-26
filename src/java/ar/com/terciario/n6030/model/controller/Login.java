@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
@@ -47,9 +48,9 @@ public class Login extends HttpServlet {
 
         if (u != null ) {
 
-            HttpSession session = request.getSession(true);
+          HttpSession session = request.getSession(true);
 
-            session.setAttribute("usuario", u);
+          session.setAttribute("usuario", u);
 
             String Perfil = u.getPerfil();
 
