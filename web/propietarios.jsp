@@ -11,8 +11,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
         <title>JSP Page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +21,6 @@
                 text-align: center;
             }
 
-            
             .navbar-custom {
                 background-color: #333;
             }
@@ -57,11 +54,8 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <form action="Historialpagos" method="get">
-
                                 <button type="submit" class="btn btn-primary">Historial De Pagos</button>
-                                
                             </form>
-
                         </li>
                     </ul>
                 </div>
@@ -112,6 +106,25 @@
 
         <h1 class="til">COMERCIOS PARA ALQUILAR</h1>
         <div class="container mt-5">
+            
+            <div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="paymentSuccessModalLabel">¡Pago realizado con éxito!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Gracias por realizar el pago. Tu reserva ha sido confirmada.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
             <div class="modal fade" id="createOwnerModal" tabindex="-1" aria-labelledby="createOwnerModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -120,7 +133,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="ownerForm" action="Historialpagos" method="post">
+                            <form id="ownerForm" action="Historialpagos" method="post" onsubmit="showPaymentSuccessModal(event)">
                                 <div class="mb-3">
                                     <label for="ownerTarjeta" class="form-label">Monto</label>
                                     <input type="text" class="form-control" name="monto" required>
@@ -138,13 +151,14 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Pagar</button>
                             </form>
-
                         </div>
                     </div>
                 </div>
             </div>
 
+           
             <div class="row row-cols-1 row-cols-md-3">
+                
                 <div class="col mb-4">
                     <div class="card">
                         <img src="images/comercio1.png" class="card-img-top" alt="...">
@@ -155,6 +169,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="col mb-4">
                     <div class="card">
                         <img src="images/comercio2.png" class="card-img-top" alt="...">
@@ -165,6 +180,7 @@
                         </div>
                     </div>
                 </div>
+               
                 <div class="col mb-4">
                     <div class="card">
                         <img src="images/DEPA.jpeg" class="card-img-top" alt="...">
@@ -175,6 +191,7 @@
                         </div>
                     </div>
                 </div>
+               
                 <div class="col mb-4">
                     <div class="card">
                         <img src="images/ALBAÑIL.jpeg" class="card-img-top" alt="...">
@@ -185,8 +202,9 @@
                         </div>
                     </div>
                 </div>
+              
                 <div class="col mb-4">
-                <div class="card">
+                    <div class="card">
                         <img src="images/lote.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">LOTE BARRIO A LA PAR DE RUIZ</h5>
@@ -195,6 +213,7 @@
                         </div>
                     </div>
                 </div>
+           
                 <div class="col mb-4">
                     <div class="card">
                         <img src="images/barrio de ratas.jpeg" class="card-img-top" alt="...">
@@ -208,11 +227,21 @@
             </div>
         </div>
 
+       
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/fontawesome.js"></script>
+
+        <script>
+            function showPaymentSuccessModal(event) {
+                event.preventDefault(); 
+                $('#createOwnerModal').modal('hide'); 
+                $('#paymentSuccessModal').modal('show'); 
+            }
+        </script>
+
     </body>
 </html>
