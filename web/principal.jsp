@@ -4,6 +4,9 @@
     Author     : Joel
 --%>
 
+<%@page import="ar.com.terciario.n6030.model.entity.Locales"%>
+<%@page import="java.util.List"%>
+<%@page import="ar.com.terciario.n6030.model.service.impl.localImple"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,20 +46,75 @@
             }
             h2{
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
-                
+
             }
             .color{
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
             }
-           
 
+ .til {
+                height: 100px;
+                margin-top: 100px;
+                text-align: center;
+            }
+
+            
+            .navbar-custom {
+                background-color: #333;
+            }
+
+            .navbar-brand img {
+                height: 60px;
+                width: auto;
+            }
+
+            .carousel-logo {
+                position: absolute;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+                height: 200px;
+            }
 
 
         </style>
     </head>
     <body>
 
-        <!-- Navbar -->
+     
+          <div class="modal fade" id="createOwnerModal" tabindex="-1" aria-labelledby="createOwnerModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createOwnerModalLabel">Pago del comercio</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="ownerForm" action="Historialpagos" method="post">
+                                <div class="mb-3">
+                                    <label for="ownerTarjeta" class="form-label">Monto</label>
+                                    <input type="text" class="form-control" name="monto" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ownercodigo" class="form-label">Fecha pago</label>
+                                    <input type="date" class="form-control" name="fecha" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newsStatus" class="form-label">Tipo pago</label>
+                                    <select class="form-control" name="tipo_pago" required>
+                                        <option value="Pago Mensual">Pagar Mes</option>
+                                        <option value="Adelanto">Adelanto</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Pagar</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
             <div class="container">
                 <a class="navbar-brand mx-auto" href="#">
@@ -96,7 +154,7 @@
                     <img src="images/LOGO2.png" class="carousel-logo" alt="Logo">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>ENCUENTRA TU COMERCIO IDEAL</h2>
-                       <p class="color">Alquileres de comercios</p>
+                        <p class="color">Alquileres de comercios</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -118,71 +176,46 @@
             </button>
         </div>
 
-        <h1 class="til">COMERCIOS PARA ALQUILAR</h1>
+        <div class="container">
+    <h1 class="my-4">COMERCIOS PARA ALQUILAR</h1>
+    <div class="row">
+        <%
+            
+            localImple loccc = new localImple();
+            
+            List<Locales> listaLocales = loccc.ListaLocales();
 
-        <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="images/comercio1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">DEPARTAMENTO COMPLEJO ARENALES</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="images/comercio2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">DEPARTAMENTE J.A.P</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="images/DEPA.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">DEPARTAMENTO LK</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="images/ALBAÑIL.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">LOTE PABLITO ALBAÑIL</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="images/lote.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">LOTE BARRIO A LA PAR DE RUIZ</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="login.jsp" class="btn btn-primary">Reserva Ahora</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="images/barrio de ratas.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TERRENO BARRIO (puede que tenga ratas)</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="login.jsp" class="btn btn-primary">Reserva  Ahorar</a>
-                    </div>
+            if (listaLocales != null && !listaLocales.isEmpty()) {
+                for (Locales l : listaLocales) {
+        %>
+        <div class="col-md-4">
+            <div class="card local-card">
+                <img class="card-img-top local-image" src="/MostrarImagen?id=<%= l.getId()%>" width="200" height="180" alt="imagen">
+                <div class="card-body">
+                    <h5 class="card-title">Local :)</h5>
+                    <p class="card-text">Superficie: <%= l.getSuperficie()%> m²</p>
+                    <p class="card-text">Costo Por Mes: <%= l.getCosto_mes()%> $</p>
+                    <p class="card-text">Estado: <%= l.isHabilitado() ? "Habilitado" : "Inhabilitado"%></p>
+                    <p class="card-text">Condición: <%= l.isAlquilado() ? "Alquilado" : "Sin Alquilar"%></p>
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createOwnerModal">Alquilar Ahora</button>
                 </div>
             </div>
         </div>
+        <%
+                }
+            } else {
+        %>
+            <div class="col-12">
+                <p>No hay locales disponibles en este momento.</p>
+            </div>
+        <%
+            }
+        %>
+    </div>
+</div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

@@ -17,18 +17,18 @@ public class Usuario implements Serializable {
     @Basic
     String usuario;
     String password;
-    String activo;
+    String estado;
     String email;
     String perfil;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String usuario, String password, String activo, String email, String perfil) {
+    public Usuario(int id, String usuario, String password, String estado, String email, String perfil) {
         this.id = id;
         this.usuario = usuario;
         this.password = password;
-        this.activo = activo;
+        this.estado = estado;
         this.email = email;
         this.perfil = perfil;
     }
@@ -57,12 +57,12 @@ public class Usuario implements Serializable {
         this.password = password;
     }
 
-    public String getActivo() {
-        return activo;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setActivo(String activo) {
-        this.activo = activo;
+    public void setEstado(String activo) {
+        this.estado = activo;
     }
 
     public String getEmail() {

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
@@ -45,7 +46,9 @@ public class Login extends HttpServlet {
 
         Usuario u = log.BusquedaUs(usuario);
 
-        if (u != null ) {
+        Boolean contraDesec = log.PassDesec(contraseña, u.getPassword());
+
+        if (u != null) {
 
             HttpSession session = request.getSession(true);
 
@@ -53,25 +56,25 @@ public class Login extends HttpServlet {
 
             String Perfil = u.getPerfil();
 
-            if ("TPIComercial".equals(u.getUsuario()) /*&& "almairy".equals(u.getPassword())*/) {
+            if ("TPIComercial".equals(u.getUsuario()) && contraDesec) {
 
                 response.sendRedirect("duenio.jsp");
 
             } else {
 
-                if ("propietario".equals(Perfil)) {
+                if ("propietario".equals(Perfil) && contraDesec) {
 
                     response.sendRedirect("propietarios.jsp");
 
                 } else {
 
-                    if ("administrador".equals(Perfil)) {
+                    if ("administrador".equals(Perfil) && contraDesec ) {
 
                         response.sendRedirect("administradores.jsp");
 
                     } else {
 
-                        if (u.getUsuario().equalsIgnoreCase(usuario) && !u.getPassword().equalsIgnoreCase(contraseña)) {
+                        if (u.getUsuario().equalsIgnoreCase(usuario) && contraDesec==false) {
 
                             response.getWriter().write("CONTRASEÑA INCORRECTA");
 

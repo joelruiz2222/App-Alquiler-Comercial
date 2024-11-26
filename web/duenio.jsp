@@ -57,9 +57,9 @@
                                     <li class="nav-item text-center">
                      
                                     <li class="nav-item text-center"><a  href="usuario.jsp" class="nav-link btr "> <i class=""></i> Usuarios </a> </li> 
-                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Locales </a> </li>
-                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Pagos </a> </li>
-                                    <li class="nav-item text-center"><a  href="" class="nav-link btr "> <i class=""></i> Novedades </a> </li>
+                                    <li class="nav-item text-center"><a  href="local.jsp" class="nav-link btr "> <i class=""></i> Locales </a> </li>
+                                    <li class="nav-item text-center"><a  href="hGlobal.jsp" class="nav-link btr "> <i class=""></i> Pagos </a> </li>
+                                    <li class="nav-item text-center"><a  href="administradores.jsp" class="nav-link btr "> <i class=""></i> Novedades </a> </li>
 
                                 </ul>
                             </div>

@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//ESTO SE ENCUENTRA EN REVISION POR JOEL RUIZ/ ESTE SERVLET FUE HECHO POR PABLO :0
+
 @WebServlet(name = "NovedadesServlet", urlPatterns = {"/NovedadesServlet"})
 public class NovedadesServlet extends HttpServlet {
 

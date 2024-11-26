@@ -25,7 +25,7 @@ public class Alquiler implements Serializable {
     
     @OneToOne
     @JoinColumn(name = "id_local")
-    Local loc;
+    Locales loc;
     
     @Basic
     int plazo_mes;
@@ -37,7 +37,7 @@ public class Alquiler implements Serializable {
     public Alquiler() {
     }
 
-    public Alquiler(int id, Propietario propi, Local loc, int plazo_mes, int costo_alquiler, Date fecha_alquiler) {
+    public Alquiler(int id, Propietario propi, Locales loc, int plazo_mes, int costo_alquiler, Date fecha_alquiler) {
         this.id = id;
         this.propi = propi;
         this.loc = loc;
@@ -62,11 +62,11 @@ public class Alquiler implements Serializable {
         this.propi = propi;
     }
 
-    public Local getLoc() {
+    public Locales getLoc() {
         return loc;
     }
 
-    public void setLoc(Local loc) {
+    public void setLoc(Locales loc) {
         this.loc = loc;
     }
 

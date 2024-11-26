@@ -20,7 +20,7 @@ public class usuarioImple implements IUsuario{
         
         u.setPassword(Contraseña);
         
-        u.setActivo(Activo);
+        u.setEstado(Activo);
         
         u.setPerfil(Perfil);
         

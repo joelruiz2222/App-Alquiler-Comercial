@@ -50,8 +50,6 @@ public class AltaUsuario extends HttpServlet {
 
         String SActivo = request.getParameter("estado");
         
-        boolean BActivo = Boolean.parseBoolean(SActivo);
-        
         String Perfil = request.getParameter("perfi");
         
         int encontrado = 0;

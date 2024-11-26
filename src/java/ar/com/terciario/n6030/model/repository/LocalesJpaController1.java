@@ -4,7 +4,7 @@
  */
 package ar.com.terciario.n6030.model.repository;
 
-import ar.com.terciario.n6030.model.entity.Local;
+import ar.com.terciario.n6030.model.entity.Locales;
 import ar.com.terciario.n6030.model.repository.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -19,23 +20,28 @@ import javax.persistence.criteria.Root;
  *
  * @author Joel
  */
-public class LocalJpaController implements Serializable {
+public class LocalesJpaController1 implements Serializable {
 
-    public LocalJpaController(EntityManagerFactory emf) {
+    public LocalesJpaController1(EntityManagerFactory emf) {
         this.emf = emf;
     }
+    
+        public LocalesJpaController1() {
+        emf = Persistence.createEntityManagerFactory("AlquilerComercialPU");
+    }
+    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public void create(Local local) {
+    public void create(Locales locales) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(local);
+            em.persist(locales);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -44,19 +50,19 @@ public class LocalJpaController implements Serializable {
         }
     }
 
-    public void edit(Local local) throws NonexistentEntityException, Exception {
+    public void edit(Locales locales) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            local = em.merge(local);
+            locales = em.merge(locales);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = local.getId();
-                if (findLocal(id) == null) {
-                    throw new NonexistentEntityException("The local with id " + id + " no longer exists.");
+                int id = locales.getId();
+                if (findLocales(id) == null) {
+                    throw new NonexistentEntityException("The locales with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -72,14 +78,14 @@ public class LocalJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Local local;
+            Locales locales;
             try {
-                local = em.getReference(Local.class, id);
-                local.getId();
+                locales = em.getReference(Locales.class, id);
+                locales.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The local with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The locales with id " + id + " no longer exists.", enfe);
             }
-            em.remove(local);
+            em.remove(locales);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -88,19 +94,19 @@ public class LocalJpaController implements Serializable {
         }
     }
 
-    public List<Local> findLocalEntities() {
-        return findLocalEntities(true, -1, -1);
+    public List<Locales> findLocalesEntities() {
+        return findLocalesEntities(true, -1, -1);
     }
 
-    public List<Local> findLocalEntities(int maxResults, int firstResult) {
-        return findLocalEntities(false, maxResults, firstResult);
+    public List<Locales> findLocalesEntities(int maxResults, int firstResult) {
+        return findLocalesEntities(false, maxResults, firstResult);
     }
 
-    private List<Local> findLocalEntities(boolean all, int maxResults, int firstResult) {
+    private List<Locales> findLocalesEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Local.class));
+            cq.select(cq.from(Locales.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -112,20 +118,20 @@ public class LocalJpaController implements Serializable {
         }
     }
 
-    public Local findLocal(int id) {
+    public Locales findLocales(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Local.class, id);
+            return em.find(Locales.class, id);
         } finally {
             em.close();
         }
     }
 
-    public int getLocalCount() {
+    public int getLocalesCount() {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Local> rt = cq.from(Local.class);
+            Root<Locales> rt = cq.from(Locales.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

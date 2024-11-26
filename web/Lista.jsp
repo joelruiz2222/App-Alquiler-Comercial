@@ -40,7 +40,7 @@
                                 <td><%= usuario.getEmail()%></td>
                                 <td><%= usuario.getUsuario()%></td>
                                 <td><%= usuario.getPassword()%></td>
-                                <td><%= usuario.getActivo()%></td>
+                                <td><%= usuario.getEstado()%></td>
                                 <td><%= usuario.getPerfil()%></td>
                                 <td>
 

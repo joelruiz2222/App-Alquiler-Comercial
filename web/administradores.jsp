@@ -12,8 +12,7 @@
     </head>
     <body>
         <div class="container mt-5">
-            <h1 class="text-center">Panel Administrativo</h1>
-            <p class="text-center">Gestión de propietarios y novedades</p>
+            <h1 class="text-center">Buzon De Quejas !!</h1>
             <div class="card my-4">
                 <div class="card-header">
                     <h2>Gestión de Novedades</h2>
@@ -85,3 +84,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
+            

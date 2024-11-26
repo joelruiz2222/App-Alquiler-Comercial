@@ -8,29 +8,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Local implements Serializable {
-    
+public class Locales implements Serializable {
+   
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     int id;
     
     @Basic
-    int superficie;
+    String superficie;
     boolean habilitado;
-    int costo_mes;
+    double costo_mes;
     boolean alquilado;
+    byte[] imagen;
 
-    public Local() {
+    public Locales() {
     }
 
-    public Local(int id, int superficie, boolean habilitado, int costo_mes, boolean alquilado) {
+    public Locales(int id, String superficie, boolean habilitado, double costo_mes, boolean alquilado, byte[] imagen) {
         this.id = id;
         this.superficie = superficie;
         this.habilitado = habilitado;
         this.costo_mes = costo_mes;
-       
         this.alquilado = alquilado;
+        this.imagen = imagen;
     }
+
 
     public int getId() {
         return id;
@@ -40,11 +42,11 @@ public class Local implements Serializable {
         this.id = id;
     }
 
-    public int getSuperficie() {
+    public String getSuperficie() {
         return superficie;
     }
 
-    public void setSuperficie(int superficie) {
+    public void setSuperficie(String superficie) {
         this.superficie = superficie;
     }
 
@@ -56,11 +58,11 @@ public class Local implements Serializable {
         this.habilitado = habilitado;
     }
 
-    public int getCosto_mes() {
+    public double getCosto_mes() {
         return costo_mes;
     }
 
-    public void setCosto_mes(int costo_mes) {
+    public void setCosto_mes(double costo_mes) {
         this.costo_mes = costo_mes;
     }
 
@@ -71,5 +73,13 @@ public class Local implements Serializable {
     public void setAlquilado(boolean alquilado) {
         this.alquilado = alquilado;
     }
-    
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
 }
